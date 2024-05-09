@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>贡献人员</title>
-    <style>
-        .main {
-            width: 100%;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .title {
-          padding: 80px;
-        }
-        #tag {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        #tag img {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            border-radius: 50%;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="main">
-      <h1 class="title">贡献人员</h1>
-      <div id="tag">
-        <!-- 这里将来会插入头像图片 -->
-      </div>
-    </div>
 
-    <script>
-      // 图片和跳转链接的数组
-      const imageUrlsAndLinks = [
-        {
-          imageUrl: 'https://avatars.githubusercontent.com/u/56524782?v=4', // Github 头像地址
-          linkUrl: 'https://github.com/Ting-Code' // Github 地址
-        },
-        {
-          imageUrl: 'https://avatars.githubusercontent.com/u/126653087?v=4', // Github 头像地址
-          linkUrl: 'https://github.com/TINGCYG' // Github 地址
-        },
-        {
-          imageUrl: 'https://avatars.githubusercontent.com/u/105594800?v=4', // Github 头像地址
-          linkUrl: 'https://github.com/wyzzhe' // Github 地址
-        },
-        {
-          imageUrl: 'https://avatars.githubusercontent.com/u/138407783?v=4', // Github 头像地址
-          linkUrl: 'https://github.com/okay2333' // Github 地址
-        },                
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贡献人员</title>
+  <style>
+    .main {
+      width: 100%;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .title {
+      padding: 80px;
+    }
+
+    #tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    #tag img {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <h1 class="title">贡献人员</h1>
+    <div id="tag">
+      <!-- 这里将来会插入头像图片 -->
+    </div>
+  </div>
+
+  <script>
+    // 图片和跳转链接的数组
+    const imageUrlsAndLinks = [
+      {
+        imageUrl: 'https://avatars.githubusercontent.com/u/56524782?v=4', // Github 头像地址
+        linkUrl: 'https://github.com/Ting-Code' // Github 地址
+      },
+      {
+        imageUrl: 'https://avatars.githubusercontent.com/u/126653087?v=4', // Github 头像地址
+        linkUrl: 'https://github.com/TINGCYG' // Github 地址
+      },
+      {
+        imageUrl: 'https://avatars.githubusercontent.com/u/105594800?v=4', // Github 头像地址
+        linkUrl: 'https://github.com/wyzzhe' // Github 地址
+      },
+      {
+        imageUrl: 'https://avatars.githubusercontent.com/u/78243168?v=4', // Github 头像地址
+        linkUrl: 'https://github.com/DaphneOdera17' // Github 地址
+      },
+      {
+        imageUrl: 'https://avatars.githubusercontent.com/u/138407783?v=4', // Github 头像地址
+        linkUrl: 'https://github.com/okay2333' // Github 地址
+      },                
         // 添加更多Github头像和链接
       ];
 
-      // 创建图片和超链接
-      for (const item of imageUrlsAndLinks) {
-        const imgElement = document.createElement('img');
-        imgElement.src = item.imageUrl;
+      const linkElement = document.createElement('a');
+      linkElement.href = item.linkUrl;
+      linkElement.appendChild(imgElement);
 
-        const linkElement = document.createElement('a');
-        linkElement.href = item.linkUrl;
-        linkElement.appendChild(imgElement);
+      document.getElementById('tag').appendChild(linkElement);
+    }
+  </script>
+</body>
 
-        document.getElementById('tag').appendChild(linkElement);
-      }
-    </script>
-  </body>
 </html>
