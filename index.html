@@ -68,13 +68,17 @@
       },                
         // 添加更多Github头像和链接
       ];
+      // 创建图片和超链接
+      for (const item of imageUrlsAndLinks) {
+        const imgElement = document.createElement('img');
+        imgElement.src = item.imageUrl;
 
-      const linkElement = document.createElement('a');
-      linkElement.href = item.linkUrl;
-      linkElement.appendChild(imgElement);
+        const linkElement = document.createElement('a');
+        linkElement.href = item.linkUrl;
+        linkElement.appendChild(imgElement);
 
-      document.getElementById('tag').appendChild(linkElement);
-    }
+        document.getElementById('tag').appendChild(linkElement);
+      }
   </script>
 </body>
 
